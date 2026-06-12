@@ -1,23 +1,13 @@
 import { Link } from "react-scroll";
+import { useLanguage } from "../../context/LanguageProvider";
 
 const FooterMain = () => {
+  const { t } = useLanguage();
   const footerLinks = [
-    {
-      name: "About Me",
-      section: "about",
-    },
-    {
-      name: "Skills",
-      section: "skills",
-    },
-    {
-      name: "Experience",
-      section: "experience",
-    },
-    {
-      name: "Projects",
-      section: "projects",
-    },
+    { key: "nav.about", section: "about" },
+    { key: "nav.skills", section: "skills" },
+    { key: "nav.experience", section: "experience" },
+    { key: "nav.projects", section: "projects" },
   ];
   return (
     <div className="px-4">
@@ -36,7 +26,7 @@ const FooterMain = () => {
                   to={item.section}
                   className="hover:text-white transition-all duration-500 cursor-pointer"
                 >
-                  {item.name}
+                  {t(item.key)}
                 </Link>
               </li>
             );
@@ -44,7 +34,7 @@ const FooterMain = () => {
         </ul>
       </div>
       <p className="max-w-[1200px] mx-auto text-right mt-2 mb-12 text-sm text-lightBrown">
-        © 2025 Ahmed | All Rights Reserved.
+        {t("footer.copy")}
       </p>
     </div>
   );

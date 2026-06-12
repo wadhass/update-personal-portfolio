@@ -1,9 +1,11 @@
 import { Link } from "react-scroll";
+import { useLanguage } from "../../context/LanguageProvider";
 
 const AboutMeText = () => {
+  const { t } = useLanguage();
   return (
     <div className="flex flex-col md:items-start sm:items-center md:text-left sm:text-center">
-      <h1 className="font-extrabold text-3xl sm:text-4xl text-cyan">About Me</h1>
+      <h1 className="font-extrabold text-3xl sm:text-4xl text-cyan">{t("nav.about")}</h1>
         <h2 className="text-white text-lg sm:text-xl">Hello, i'm Ahmed Hassan.</h2>
         <p className="text-white text-sm sm:text-base max-w-3xl">
           I’m a passionate and dedicated developer specializing in creating
@@ -32,7 +34,7 @@ const AboutMeText = () => {
           to="projects"
           className="cursor-pointer text-white hover:text-cyan transition-all duration-500"
         >
-          My Projects
+          {t("nav.projects")}
         </Link>
       </button>
     </div>

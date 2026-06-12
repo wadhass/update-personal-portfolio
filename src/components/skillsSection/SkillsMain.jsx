@@ -1,6 +1,7 @@
 import AllSkills from "./AllSkills";
 import AllSkillsSM from "./AllSkillsSM";
 import SkillsText from "./SkillsText";
+import Languages from "./Languages";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../framerMotion/variants";
 
@@ -15,6 +16,7 @@ const SkillsMain = () => {
           viewport={{ once: false, amount: 0.7 }}
         >
           <SkillsText />
+          <Languages />
         </motion.div>
         <div className="bottom-[50px] absolute left-[50%] -translate-x-[50%] sm:hidden lg:block">
           <AllSkills />
